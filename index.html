@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Čist Miris – profesionalno mašinsko pranje tepiha u Beogradu. Cena 400 din/m², minimum 10 m². Rakovica, Voždovac, Čukarica." />
+  <meta name="description" content="Čist Miris – profesionalno mašinsko pranje tepiha u Beogradu. Cena 400 din/m², minimum 10 m². Širi Beograd (sve opštine)." />
   <title>Čist Miris | Profesionalno mašinsko pranje tepiha – Beograd</title>
 
   <style>
@@ -101,7 +101,15 @@
       transform: rotate(18deg);
       opacity:.8;
     }
-    .brand span{font-size:16px}
+
+    /* Brand name - nicer font + slightly bigger */
+    .brandName{
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size:18px;              /* was 16px */
+      letter-spacing:.3px;
+      line-height:1;
+    }
+
     .menu{display:flex; gap:14px; align-items:center; flex-wrap:wrap}
     .menu a{
       text-decoration:none;
@@ -201,22 +209,6 @@
 
     .heroActions{display:flex; gap:10px; flex-wrap:wrap}
 
-    /* Image placeholder block */
-    .heroMedia{
-      margin-top:16px;
-      border-radius: var(--radius);
-      border:1px dashed rgba(11,62,168,.25);
-      background:
-        linear-gradient(135deg, rgba(121,209,255,.22), rgba(255,138,42,.12));
-      height: 220px;
-      display:flex; align-items:center; justify-content:center;
-      text-align:center;
-      color: rgba(10,26,43,.72);
-      padding:16px;
-    }
-    .heroMedia strong{display:block; color: rgba(10,26,43,.9)}
-    .heroMedia span{font-size:13px}
-
     .heroImg{
       margin-top:16px;
       width:100%;
@@ -257,7 +249,6 @@
       background: linear-gradient(135deg, rgba(121,209,255,.18), rgba(255,138,42,.10));
     }
 
-    /* Pre/Posle: koristimo isti fajl, ali drugačiji kadar */
     .compare img.pre{object-position:left center}
     .compare img.after{object-position:right center}
 
@@ -266,7 +257,6 @@
       .gallery img{height:210px}
     }
 
-    /* Side quick contact */
     .sideBox{padding:18px}
     .sideBox h3{margin:0 0 10px; font-size:16px}
     .kv{display:grid; gap:10px; margin-top:10px}
@@ -282,7 +272,6 @@
     .kv .v a{text-decoration:none; color: var(--blue3)}
     .kv .v a:hover{text-decoration:underline}
 
-    /* Sections */
     .section{padding:18px 0}
     .section h2{
       margin:0 0 12px;
@@ -314,7 +303,6 @@
     .step h4{margin:0 0 6px; font-size:15px}
     .step p{margin:0; color:rgba(10,26,43,.70); font-size:14px}
 
-    /* Before/After */
     .sliderWrap{padding:16px}
     .compare{
       position:relative;
@@ -356,7 +344,6 @@
     }
     .range{width:100%; margin-top:12px}
 
-    /* Price */
     .priceRow{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -381,7 +368,6 @@
       font-size:13px;
     }
 
-    /* Locations */
     .twoCols{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -400,7 +386,6 @@
       color: rgba(10,26,43,.82);
     }
 
-    /* FAQ */
     details{
       border:1px solid rgba(11,62,168,.12);
       border-radius:16px;
@@ -412,7 +397,6 @@
     summary{cursor:pointer; font-weight:900}
     summary::-webkit-details-marker{display:none}
 
-    /* Footer */
     footer{
       margin-top:12px;
       border-top:1px solid rgba(11,62,168,.10);
@@ -443,13 +427,12 @@
     .small{font-size:13px; color:rgba(10,26,43,.72)}
     .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
 
-    /* Mobile */
     @media (max-width: 920px){
       .heroGrid{grid-template-columns:1fr}
       .grid3{grid-template-columns:1fr}
       .twoCols, .priceRow, .footerGrid{grid-template-columns:1fr}
       header{position:relative}
-      .menu{display:none} /* simple: hide menu on mobile */
+      .menu{display:none}
     }
   </style>
 </head>
@@ -458,7 +441,7 @@
   <div class="topbar">
     <div class="wrap">
       <div class="row">
-        <div class="pill">Beograd: <strong>Rakovica · Voždovac · Čukarica</strong></div>
+        <div class="pill">Beograd: <strong>Širi Beograd (sve opštine)</strong></div>
         <div class="pill">Minimum: <strong>10 m²</strong></div>
       </div>
     </div>
@@ -469,7 +452,7 @@
       <div class="nav">
         <a class="brand" href="#top" aria-label="Početna">
           <span class="logo" aria-hidden="true"></span>
-          <span>Čist Miris</span>
+          <span class="brandName">Čist Miris</span>
         </a>
 
         <nav class="menu" aria-label="Glavni meni">
@@ -490,7 +473,6 @@
   </header>
 
   <main id="top">
-    <!-- HERO -->
     <section id="pocetna" class="hero">
       <div class="wrap">
         <div class="heroGrid">
@@ -504,7 +486,7 @@
             <div class="badges" aria-label="Istaknute stavke">
               <span class="badge">400 din/m²</span>
               <span class="badge">Minimum 10 m²</span>
-              <span class="badge">Rakovica · Voždovac · Čukarica</span>
+              <span class="badge">Beograd: Širi Beograd (sve opštine)</span>
             </div>
 
             <div class="heroActions">
@@ -513,7 +495,6 @@
               <a class="btn" href="#proces">Kako radimo</a>
             </div>
 
-            <!-- HERO FOTO (FIXED PATH) -->
             <img class="heroImg" src="asset/IMG-c83177e8bb9dabe8accaae269f4f7b0f-V.jpg" alt="Mašinsko pranje tepiha – rad u procesu" loading="lazy" />
           </div>
 
@@ -534,7 +515,7 @@
               </div>
               <div class="item">
                 <div class="k">Lokacije</div>
-                <div class="v">Rakovica · Voždovac · Čukarica</div>
+                <div class="v">Beograd: Širi Beograd (sve opštine)</div>
               </div>
             </div>
 
@@ -547,7 +528,6 @@
       </div>
     </section>
 
-    <!-- PROCESS -->
     <section id="proces" class="section">
       <div class="wrap">
         <h2>Proces usluge</h2>
@@ -584,11 +564,10 @@
           <div class="step">
             <div class="num">6</div>
             <h4>Isporuka</h4>
-            <p>Dogovor isporuke za Rakovicu, Voždovac i Čukaricu.</p>
+            <p>Dogovor isporuke za područje Beograda (sve opštine).</p>
           </div>
         </div>
 
-        <!-- FOTOGRAFIJE PROCESA (FIXED PATHS) -->
         <div class="card" style="margin-top:14px; padding:16px">
           <div class="gallery" aria-label="Fotografije procesa pranja tepiha">
             <figure>
@@ -605,7 +584,6 @@
       </div>
     </section>
 
-    <!-- BEFORE/AFTER -->
     <section id="preposle" class="section">
       <div class="wrap">
         <h2>Pre / Posle</h2>
@@ -625,7 +603,6 @@
       </div>
     </section>
 
-    <!-- PRICING -->
     <section id="cenovnik" class="section">
       <div class="wrap">
         <h2>Cenovnik</h2>
@@ -636,7 +613,7 @@
             <div class="small">Pranje tepiha</div>
             <div class="bigPrice">400 din/m²</div>
             <div class="muted">
-              Profesionalno mašinsko pranje tepiha za Beograd (Rakovica, Voždovac, Čukarica).
+              Profesionalno mašinsko pranje tepiha za Beograd (Širi Beograd, sve opštine).
             </div>
             <div class="minNote">
               Minimum porudžbine: <strong>10 m²</strong>
@@ -662,20 +639,17 @@
       </div>
     </section>
 
-    <!-- LOCATIONS -->
     <section id="lokacije" class="section">
       <div class="wrap">
         <h2>Lokacije</h2>
-        <p class="muted">Uslužno područje: Beograd (Rakovica, Voždovac, Čukarica).</p>
+        <p class="muted">Uslužno područje: Beograd (Širi Beograd, sve opštine).</p>
 
         <div class="twoCols" style="margin-top:14px">
           <div class="card loc">
             <h3>Beograd</h3>
-            <p>Radimo po dogovoru na sledećim lokacijama:</p>
+            <p>Radimo po dogovoru na teritoriji celog Beograda:</p>
             <div class="chips" aria-label="Opštine">
-              <span class="chip">Rakovica</span>
-              <span class="chip">Voždovac</span>
-              <span class="chip">Čukarica</span>
+              <span class="chip">Širi Beograd (sve opštine)</span>
             </div>
             <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
               <a class="btn blue" href="tel:+38165112116">Pozovi</a>
@@ -692,19 +666,17 @@
       </div>
     </section>
 
-    <!-- INFO / SEO BLOCK -->
     <section class="section">
       <div class="wrap">
         <h2>Zašto Čist Miris?</h2>
         <p class="muted">
           Kada se tepih pere “na brzinu”, često ostane vlažan miris ili neravnomerna čistoća.
           Čist Miris radi profesionalno mašinsko pranje uz proces koji daje higijenu i svežinu.
-          Cena je jednostavna: 400 din/m², minimum 10 m², područje Beograda: Rakovica, Voždovac i Čukarica.
+          Cena je jednostavna: 400 din/m², minimum 10 m², područje: Beograd (Širi Beograd, sve opštine).
         </p>
       </div>
     </section>
 
-    <!-- FAQ -->
     <section class="section">
       <div class="wrap">
         <h2>Česta pitanja</h2>
@@ -716,7 +688,7 @@
 
         <details>
           <summary>Koje lokacije pokrivate?</summary>
-          <div class="muted" style="margin-top:10px">Beograd: Rakovica, Voždovac i Čukarica (po dogovoru).</div>
+          <div class="muted" style="margin-top:10px">Beograd: Širi Beograd (sve opštine), po dogovoru.</div>
         </details>
 
         <details>
@@ -727,14 +699,13 @@
     </section>
   </main>
 
-  <!-- FOOTER / CONTACT -->
   <footer id="kontakt">
     <div class="wrap">
       <div class="footerGrid">
         <div class="card" style="padding:18px">
           <h2 style="margin:0 0 10px; font-size:20px">Kontakt</h2>
           <p class="muted" style="margin:0 0 12px">
-            Pozovi ili pošalji upit. Minimalno 10 m². Beograd: Rakovica, Voždovac, Čukarica.
+            Pozovi ili pošalji upit. Minimalno 10 m². Beograd: Širi Beograd (sve opštine).
           </p>
 
           <div class="kv">
@@ -766,19 +737,22 @@
           </form>
 
           <div class="note">
-            Savet: u poruku napiši kvadraturu (minimum 10 m²) i lokaciju (Rakovica / Voždovac / Čukarica).
+            Savet: u poruku napiši kvadraturu (minimum 10 m²) i lokaciju (Beograd).
           </div>
         </div>
       </div>
 
-      <div class="small" style="padding:10px 0 18px; color:rgba(10,26,43,.62)">
+      <div class="small" style="padding:10px 0 4px; color:rgba(10,26,43,.62)">
         © <span id="year"></span> Čist Miris · Profesionalno mašinsko pranje tepiha
+      </div>
+
+      <div class="small" style="padding:0 0 18px; color:rgba(10,26,43,.55)">
+        Izrada i upravljanje: <a href="https://www.silverado.pro" style="text-decoration:none; font-weight:800" target="_blank" rel="noopener">www.silverado.pro</a>
       </div>
     </div>
   </footer>
 
   <script>
-    // Pre/posle slider
     const range = document.getElementById('range');
     const afterImg = document.getElementById('afterImg');
     const handle = document.getElementById('handle');
@@ -793,7 +767,6 @@
     range.addEventListener('input', e => setCompare(e.target.value));
     setCompare(range.value);
 
-    // Mailto form
     document.getElementById('mailForm').addEventListener('submit', (e) => {
       e.preventDefault();
       const name = (document.getElementById('name').value || '').trim();
@@ -802,7 +775,7 @@
 
       const subject = encodeURIComponent('Upit sa sajta – Čist Miris');
       const body = encodeURIComponent(
-        `Ime: ${name}\nTelefon: ${phone}\n\nPoruka:\n${msg}\n\nCena: 400 din/m² (min 10 m²)\nLokacije: Rakovica, Voždovac, Čukarica\n`
+        `Ime: ${name}\nTelefon: ${phone}\n\nPoruka:\n${msg}\n\nCena: 400 din/m² (min 10 m²)\nLokacija: Beograd (Širi Beograd, sve opštine)\n`
       );
 
       const to = 'nenadobucina080@gmail.com';
