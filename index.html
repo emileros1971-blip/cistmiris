@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Čist Miris – profesionalno mašinsko pranje tepiha u Beogradu. Cena 400 din/m², minimum 10 m². Rakovica, Voždovac, Čukarica." />
+  <title>Čist Miris | Profesionalno mašinsko pranje tepiha – Beograd</title>
+
+  <style>
+    :root{
+      /* Palette: orange + light-to-dark blue + white */
+      --bg: #f6fbff;
+      --bg2:#ffffff;
+      --text:#0a1a2b;
+      --muted:#4b6786;
+
+      --blue1:#79d1ff;  /* light */
+      --blue2:#2e8dff;  /* mid */
+      --blue3:#0b3ea8;  /* deep */
+
+      --orange:#ff8a2a;
+      --orange2:#ffb35c;
+
+      --card:#ffffff;
+      --border: rgba(11,62,168,.14);
+
+      --shadow: 0 18px 40px rgba(8,33,70,.14);
+      --shadow2: 0 10px 24px rgba(8,33,70,.12);
+      --radius: 18px;
+      --max: 1120px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 650px at 15% -10%, rgba(121,209,255,.55), transparent 55%),
+        radial-gradient(900px 600px at 85% 0%, rgba(255,138,42,.28), transparent 52%),
+        linear-gradient(180deg, #eef8ff, var(--bg));
+      line-height:1.45;
+    }
+
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+
+    /* Top bar */
+    .topbar{
+      font-size:13px;
+      color:rgba(10,26,43,.92);
+      border-bottom:1px solid rgba(11,62,168,.10);
+      background: rgba(255,255,255,.75);
+      backdrop-filter: blur(10px);
+    }
+    .topbar .row{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px; padding:10px 0;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 12px;
+      border:1px solid rgba(11,62,168,.14);
+      border-radius:999px;
+      background: rgba(255,255,255,.8);
+      box-shadow: 0 8px 18px rgba(8,33,70,.08);
+      color: rgba(10,26,43,.95);
+    }
+
+    /* Sticky header */
+    header{
+      position:sticky; top:0; z-index:50;
+      background: rgba(255,255,255,.72);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid rgba(11,62,168,.10);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      text-decoration:none;
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+    .logo{
+      width:36px; height:36px; border-radius:12px;
+      background:
+        linear-gradient(135deg, var(--blue2), var(--blue1));
+      position:relative;
+      box-shadow: 0 14px 26px rgba(46,141,255,.25);
+      overflow:hidden;
+    }
+    .logo:before{
+      content:"";
+      position:absolute; inset:-30%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.9), transparent 45%);
+      transform: rotate(18deg);
+      opacity:.8;
+    }
+    .brand span{font-size:16px}
+    .menu{display:flex; gap:14px; align-items:center; flex-wrap:wrap}
+    .menu a{
+      text-decoration:none;
+      color:rgba(10,26,43,.82);
+      padding:8px 10px;
+      border-radius:12px;
+      transition: .18s ease;
+    }
+    .menu a:hover{
+      background: rgba(46,141,255,.10);
+      transform: translateY(-1px);
+    }
+
+    .cta{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+
+    /* Buttons - slightly 3D */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:11px 14px;
+      border-radius:14px;
+      border:1px solid rgba(11,62,168,.18);
+      background: linear-gradient(180deg, #ffffff, #f3f9ff);
+      color: var(--text);
+      text-decoration:none;
+      font-weight:800;
+      box-shadow:
+        0 10px 18px rgba(8,33,70,.12),
+        inset 0 1px 0 rgba(255,255,255,.9);
+      transition: transform .16s ease, box-shadow .16s ease;
+      user-select:none;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      box-shadow:
+        0 14px 24px rgba(8,33,70,.14),
+        inset 0 1px 0 rgba(255,255,255,.9);
+    }
+    .btn:active{transform: translateY(0px)}
+
+    .btn.primary{
+      border:none;
+      color:#06101f;
+      background: linear-gradient(135deg, var(--orange), var(--orange2));
+      box-shadow:
+        0 14px 26px rgba(255,138,42,.28),
+        inset 0 1px 0 rgba(255,255,255,.55);
+    }
+    .btn.blue{
+      border:none;
+      color:#ffffff;
+      background: linear-gradient(135deg, var(--blue2), var(--blue3));
+      box-shadow:
+        0 14px 26px rgba(46,141,255,.28),
+        inset 0 1px 0 rgba(255,255,255,.22);
+    }
+
+    /* Hero */
+    .hero{padding:34px 0 18px}
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .card{
+      background: rgba(255,255,255,.92);
+      border:1px solid rgba(11,62,168,.12);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .heroMain{padding:22px}
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height:1.06;
+      letter-spacing:-.7px;
+    }
+    .sub{
+      color: rgba(10,26,43,.78);
+      font-size:15px;
+      margin:0 0 16px;
+    }
+    .badges{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin:14px 0 18px;
+    }
+    .badge{
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(11,62,168,.14);
+      background: rgba(46,141,255,.08);
+      color: rgba(10,26,43,.86);
+      font-size:13px;
+      box-shadow: 0 10px 18px rgba(8,33,70,.06);
+    }
+
+    .heroActions{display:flex; gap:10px; flex-wrap:wrap}
+
+    /* Image placeholder block */
+    .heroMedia{
+      margin-top:16px;
+      border-radius: var(--radius);
+      border:1px dashed rgba(11,62,168,.25);
+      background:
+        linear-gradient(135deg, rgba(121,209,255,.22), rgba(255,138,42,.12));
+      height: 220px;
+      display:flex; align-items:center; justify-content:center;
+      text-align:center;
+      color: rgba(10,26,43,.72);
+      padding:16px;
+    }
+    .heroMedia strong{display:block; color: rgba(10,26,43,.9)}
+    .heroMedia span{font-size:13px}
+
+    .heroImg{
+      margin-top:16px;
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      border-radius: var(--radius);
+      border:1px solid rgba(11,62,168,.12);
+      box-shadow: var(--shadow2);
+      background: linear-gradient(135deg, rgba(121,209,255,.18), rgba(255,138,42,.10));
+      display:block;
+    }
+
+    .locImg{
+      margin-top:10px;
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      border-radius: var(--radius);
+      border:1px solid rgba(11,62,168,.12);
+      box-shadow: var(--shadow2);
+      display:block;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .gallery figure{margin:0}
+    .gallery img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      border-radius: 16px;
+      border:1px solid rgba(11,62,168,.12);
+      box-shadow: 0 10px 22px rgba(8,33,70,.10);
+      display:block;
+      background: linear-gradient(135deg, rgba(121,209,255,.18), rgba(255,138,42,.10));
+    }
+
+    /* Pre/Posle: koristimo isti fajl, ali drugačiji kadar */
+    .compare img.pre{object-position:left center}
+    .compare img.after{object-position:right center}
+
+    @media (max-width: 920px){
+      .gallery{grid-template-columns:1fr}
+      .gallery img{height:210px}
+    }
+
+    /* Side quick contact */
+    .sideBox{padding:18px}
+    .sideBox h3{margin:0 0 10px; font-size:16px}
+    .kv{display:grid; gap:10px; margin-top:10px}
+    .kv .item{
+      padding:12px;
+      border-radius:16px;
+      border:1px solid rgba(11,62,168,.12);
+      background: linear-gradient(180deg, #ffffff, #f7fbff);
+      box-shadow: var(--shadow2);
+    }
+    .kv .k{font-size:12px; color:rgba(10,26,43,.62)}
+    .kv .v{font-weight:900; margin-top:4px}
+    .kv .v a{text-decoration:none; color: var(--blue3)}
+    .kv .v a:hover{text-decoration:underline}
+
+    /* Sections */
+    .section{padding:18px 0}
+    .section h2{
+      margin:0 0 12px;
+      font-size:22px;
+      letter-spacing:-.3px;
+    }
+    .muted{color: rgba(10,26,43,.74)}
+
+    .grid3{
+      display:grid; gap:14px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .step{
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid rgba(11,62,168,.12);
+      background: rgba(255,255,255,.92);
+      box-shadow: var(--shadow2);
+    }
+    .step .num{
+      width:36px; height:36px; border-radius:14px;
+      display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(135deg, rgba(46,141,255,.18), rgba(121,209,255,.18));
+      border:1px solid rgba(11,62,168,.10);
+      font-weight:1000;
+      margin-bottom:10px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.85);
+    }
+    .step h4{margin:0 0 6px; font-size:15px}
+    .step p{margin:0; color:rgba(10,26,43,.70); font-size:14px}
+
+    /* Before/After */
+    .sliderWrap{padding:16px}
+    .compare{
+      position:relative;
+      width:100%;
+      aspect-ratio: 16/9;
+      border-radius: var(--radius);
+      overflow:hidden;
+      border:1px solid rgba(11,62,168,.12);
+      background: linear-gradient(135deg, rgba(46,141,255,.10), rgba(255,138,42,.08));
+    }
+    .compare img{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit:cover;
+      user-select:none;
+      pointer-events:none;
+    }
+    .after{clip-path: inset(0 0 0 50%)}
+    .handle{
+      position:absolute; top:0; bottom:0;
+      left:50%;
+      width:2px;
+      background: rgba(255,255,255,.95);
+      box-shadow: 0 0 0 6px rgba(11,62,168,.10);
+    }
+    .knob{
+      position:absolute;
+      top:50%; left:50%;
+      transform: translate(-50%,-50%);
+      width:46px; height:46px;
+      border-radius:999px;
+      border:1px solid rgba(11,62,168,.22);
+      background: rgba(255,255,255,.75);
+      backdrop-filter: blur(10px);
+      display:flex; align-items:center; justify-content:center;
+      font-weight:1000;
+      color: rgba(10,26,43,.85);
+      box-shadow: 0 14px 24px rgba(8,33,70,.14);
+    }
+    .range{width:100%; margin-top:12px}
+
+    /* Price */
+    .priceRow{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    .priceCard{padding:18px}
+    .bigPrice{
+      font-size:34px; font-weight:1000; letter-spacing:-.6px;
+      margin:6px 0 10px;
+      background: linear-gradient(135deg, var(--orange), var(--blue2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .minNote{
+      margin-top:10px;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(11,62,168,.12);
+      background: rgba(46,141,255,.08);
+      color: rgba(10,26,43,.78);
+      font-size:13px;
+    }
+
+    /* Locations */
+    .twoCols{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    .loc{padding:16px}
+    .loc h3{margin:0 0 6px}
+    .loc p{margin:0; color:rgba(10,26,43,.74)}
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .chip{
+      padding:7px 10px;
+      border-radius:999px;
+      background: rgba(255,138,42,.14);
+      border:1px solid rgba(255,138,42,.25);
+      font-size:13px;
+      color: rgba(10,26,43,.82);
+    }
+
+    /* FAQ */
+    details{
+      border:1px solid rgba(11,62,168,.12);
+      border-radius:16px;
+      background: rgba(255,255,255,.92);
+      padding:12px 14px;
+      box-shadow: var(--shadow2);
+    }
+    details + details{margin-top:10px}
+    summary{cursor:pointer; font-weight:900}
+    summary::-webkit-details-marker{display:none}
+
+    /* Footer */
+    footer{
+      margin-top:12px;
+      border-top:1px solid rgba(11,62,168,.10);
+      background:
+        radial-gradient(900px 520px at 10% 0%, rgba(121,209,255,.25), transparent 55%),
+        radial-gradient(900px 520px at 90% 0%, rgba(255,138,42,.16), transparent 58%),
+        linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.92));
+    }
+    .footerGrid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:14px;
+      padding:18px 0;
+    }
+    .form{display:grid; gap:10px}
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(11,62,168,.16);
+      background: rgba(255,255,255,.95);
+      color: var(--text);
+      outline:none;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.9);
+    }
+    textarea{min-height:110px; resize:vertical}
+    .note{font-size:12px; color:rgba(10,26,43,.60); margin-top:8px}
+    .small{font-size:13px; color:rgba(10,26,43,.72)}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+
+    /* Mobile */
+    @media (max-width: 920px){
+      .heroGrid{grid-template-columns:1fr}
+      .grid3{grid-template-columns:1fr}
+      .twoCols, .priceRow, .footerGrid{grid-template-columns:1fr}
+      header{position:relative}
+      .menu{display:none} /* simple: hide menu on mobile */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="row">
+        <div class="pill">Beograd: <strong>Rakovica · Voždovac · Čukarica</strong></div>
+        <div class="pill">Minimum: <strong>10 m²</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="Početna">
+          <span class="logo" aria-hidden="true"></span>
+          <span>Čist Miris</span>
+        </a>
+
+        <nav class="menu" aria-label="Glavni meni">
+          <a href="#pocetna">Početna</a>
+          <a href="#proces">Proces</a>
+          <a href="#preposle">Pre/Posle</a>
+          <a href="#cenovnik">Cenovnik</a>
+          <a href="#lokacije">Lokacije</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+
+        <div class="cta">
+          <a class="btn" href="tel:+38165112116">Pozovi</a>
+          <a class="btn primary" href="#kontakt">Pošalji upit</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section id="pocetna" class="hero">
+      <div class="wrap">
+        <div class="heroGrid">
+          <div class="card heroMain">
+            <h1>Profesionalno mašinsko pranje tepiha</h1>
+            <p class="sub">
+              Čist Miris pruža pouzdanu uslugu pranja tepiha u Beogradu, sa fokusom na čistoću, higijenu i prijatan miris.
+              Brz dogovor, jasna cena, bez komplikacija.
+            </p>
+
+            <div class="badges" aria-label="Istaknute stavke">
+              <span class="badge">400 din/m²</span>
+              <span class="badge">Minimum 10 m²</span>
+              <span class="badge">Rakovica · Voždovac · Čukarica</span>
+            </div>
+
+            <div class="heroActions">
+              <a class="btn primary" href="tel:+38165112116">Pozovi 065/112-116</a>
+              <a class="btn blue" href="#cenovnik">Pogledaj cenovnik</a>
+              <a class="btn" href="#proces">Kako radimo</a>
+            </div>
+
+            <!-- HERO FOTO -->
+            <img class="heroImg" src="IMG-c83177e8bb9dabe8accaae269f4f7b0f-V.jpg" alt="Mašinsko pranje tepiha – rad u procesu" loading="lazy" />
+          </div>
+
+          <aside class="card sideBox" aria-label="Brzi kontakt">
+            <h3>Brzi kontakt</h3>
+            <div class="kv">
+              <div class="item">
+                <div class="k">Telefon</div>
+                <div class="v"><a href="tel:+38165112116">065/112-116</a></div>
+              </div>
+              <div class="item">
+                <div class="k">Email</div>
+                <div class="v"><a href="mailto:nenadobucina080@gmail.com">nenadobucina080@gmail.com</a></div>
+              </div>
+              <div class="item">
+                <div class="k">Cena</div>
+                <div class="v">400 din/m² <span class="small">(minimum 10 m²)</span></div>
+              </div>
+              <div class="item">
+                <div class="k">Lokacije</div>
+                <div class="v">Rakovica · Voždovac · Čukarica</div>
+              </div>
+            </div>
+
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+              <a class="btn blue" href="#kontakt">Pošalji upit</a>
+              <a class="btn" href="#preposle">Pre/Posle</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="proces" class="section">
+      <div class="wrap">
+        <h2>Proces usluge</h2>
+        <p class="muted">
+          Profesionalno mašinsko pranje, temeljno čišćenje i sveže pakovanje. Cilj: da tepih bude čist i da miriše kako treba.
+        </p>
+
+        <div class="grid3" style="margin-top:14px">
+          <div class="step">
+            <div class="num">1</div>
+            <h4>Prijem i priprema</h4>
+            <p>Dogovor termina, preuzimanje (po potrebi) i osnovna priprema tepiha pre pranja.</p>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <h4>Mašinsko pranje</h4>
+            <p>Dubinsko pranje mašinom uz kontrolisanu količinu vode i sredstva, bez improvizacije.</p>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <h4>Iscedivanje i sušenje</h4>
+            <p>Proces koji sprečava neprijatne mirise i vraća tepih u “normalno stanje” što pre.</p>
+          </div>
+          <div class="step">
+            <div class="num">4</div>
+            <h4>Finalna kontrola</h4>
+            <p>Provera čistoće i završna obrada da rezultat bude ujednačen.</p>
+          </div>
+          <div class="step">
+            <div class="num">5</div>
+            <h4>Pakovanje</h4>
+            <p>Čisto pakovanje, spremno za preuzimanje ili isporuku.</p>
+          </div>
+          <div class="step">
+            <div class="num">6</div>
+            <h4>Isporuka</h4>
+            <p>Dogovor isporuke za Rakovicu, Voždovac i Čukaricu.</p>
+          </div>
+        </div>
+
+        <!-- FOTOGRAFIJE PROCESA -->
+        <div class="card" style="margin-top:14px; padding:16px">
+          <div class="gallery" aria-label="Fotografije procesa pranja tepiha">
+            <figure>
+              <img src="dryer-tube.jpg" alt="Centrifuga / iscedivanje tepiha" loading="lazy" />
+            </figure>
+            <figure>
+              <img src="hero-machine.jpg" alt="Mašina u radionici" loading="lazy" />
+            </figure>
+            <figure>
+              <img src="drying-racks.jpg" alt="Sušenje tepiha na stalkovima" loading="lazy" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEFORE/AFTER -->
+    <section id="preposle" class="section">
+      <div class="wrap">
+        <h2>Pre / Posle</h2>
+        <p class="muted">Umetni svoje slike pre i posle. Slider radi lokalno, bez servera.</p>
+
+        <div class="card sliderWrap">
+          <div class="compare" id="compare">
+            <img class="pre" src="before-after.jpg" alt="Pre pranja tepiha" loading="lazy" />
+            <img class="after" id="afterImg" src="before-after.jpg" alt="Posle pranja tepiha" loading="lazy" />
+            <div class="handle" id="handle" aria-hidden="true"></div>
+            <div class="knob" aria-hidden="true">↔</div>
+          </div>
+
+          <input class="range" id="range" type="range" min="0" max="100" value="50" aria-label="Pomeranje pre/posle" />
+          <div class="small">Povuci klizač: <span id="pct">50%</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="cenovnik" class="section">
+      <div class="wrap">
+        <h2>Cenovnik</h2>
+        <p class="muted">Jasno: jedna cena po kvadratu + minimum kvadrature. To je to.</p>
+
+        <div class="priceRow" style="margin-top:14px">
+          <div class="card priceCard">
+            <div class="small">Pranje tepiha</div>
+            <div class="bigPrice">400 din/m²</div>
+            <div class="muted">
+              Profesionalno mašinsko pranje tepiha za Beograd (Rakovica, Voždovac, Čukarica).
+            </div>
+            <div class="minNote">
+              Minimum porudžbine: <strong>10 m²</strong>
+            </div>
+            <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+              <a class="btn primary" href="tel:+38165112116">Pozovi 065/112-116</a>
+              <a class="btn" href="#kontakt">Pošalji upit</a>
+            </div>
+          </div>
+
+          <div class="card priceCard">
+            <div class="small">Usluga uključuje</div>
+            <ul class="muted" style="margin:10px 0 0; padding-left:18px">
+              <li>Mašinsko dubinsko pranje</li>
+              <li>Iscedivanje i sušenje</li>
+              <li>Finalnu kontrolu</li>
+              <li>Pakovanje</li>
+              <li>Svež i čist miris (kako i ime kaže)</li>
+            </ul>
+            <p class="note">Ako kasnije dodaš dodatne usluge, ovde ubaci još jednu karticu ili tabelu.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATIONS -->
+    <section id="lokacije" class="section">
+      <div class="wrap">
+        <h2>Lokacije</h2>
+        <p class="muted">Uslužno područje: Beograd (Rakovica, Voždovac, Čukarica).</p>
+
+        <div class="twoCols" style="margin-top:14px">
+          <div class="card loc">
+            <h3>Beograd</h3>
+            <p>Radimo po dogovoru na sledećim lokacijama:</p>
+            <div class="chips" aria-label="Opštine">
+              <span class="chip">Rakovica</span>
+              <span class="chip">Voždovac</span>
+              <span class="chip">Čukarica</span>
+            </div>
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+              <a class="btn blue" href="tel:+38165112116">Pozovi</a>
+              <a class="btn" href="mailto:nenadobucina080@gmail.com">Email</a>
+            </div>
+          </div>
+
+          <div class="card loc">
+            <h3>Radionica / sušenje</h3>
+            <p class="muted">Fotografija iz procesa sušenja (primer iz tvoje galerije).</p>
+            <img class="locImg" src="drying-racks.jpg" alt="Tepisi na sušenju" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFO / SEO BLOCK -->
+    <section class="section">
+      <div class="wrap">
+        <h2>Zašto Čist Miris?</h2>
+        <p class="muted">
+          Kada se tepih pere “na brzinu”, često ostane vlažan miris ili neravnomerna čistoća.
+          Čist Miris radi profesionalno mašinsko pranje uz proces koji daje higijenu i svežinu.
+          Cena je jednostavna: 400 din/m², minimum 10 m², područje Beograda: Rakovica, Voždovac i Čukarica.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="wrap">
+        <h2>Česta pitanja</h2>
+
+        <details>
+          <summary>Kolika je cena pranja tepiha?</summary>
+          <div class="muted" style="margin-top:10px">Cena je 400 din/m², uz minimum 10 m².</div>
+        </details>
+
+        <details>
+          <summary>Koje lokacije pokrivate?</summary>
+          <div class="muted" style="margin-top:10px">Beograd: Rakovica, Voždovac i Čukarica (po dogovoru).</div>
+        </details>
+
+        <details>
+          <summary>Kako da zakažem?</summary>
+          <div class="muted" style="margin-top:10px">Najbrže pozivom na 065/112-116 ili emailom na nenadobucina080@gmail.com.</div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER / CONTACT -->
+  <footer id="kontakt">
+    <div class="wrap">
+      <div class="footerGrid">
+        <div class="card" style="padding:18px">
+          <h2 style="margin:0 0 10px; font-size:20px">Kontakt</h2>
+          <p class="muted" style="margin:0 0 12px">
+            Pozovi ili pošalji upit. Minimalno 10 m². Beograd: Rakovica, Voždovac, Čukarica.
+          </p>
+
+          <div class="kv">
+            <div class="item">
+              <div class="k">Telefon</div>
+              <div class="v"><a href="tel:+38165112116">065/112-116</a></div>
+            </div>
+            <div class="item">
+              <div class="k">Email</div>
+              <div class="v"><a href="mailto:nenadobucina080@gmail.com">nenadobucina080@gmail.com</a></div>
+            </div>
+            <div class="item">
+              <div class="k">Cena</div>
+              <div class="v">400 din/m² <span class="small">(minimum 10 m²)</span></div>
+            </div>
+          </div>
+
+          <div class="note">Ovo je statičan sajt (1 fajl). Forma desno šalje email preko mail aplikacije.</div>
+        </div>
+
+        <div class="card" style="padding:18px">
+          <h2 style="margin:0 0 10px; font-size:20px">Pošalji upit</h2>
+
+          <form class="form" id="mailForm">
+            <input id="name" type="text" placeholder="Ime" autocomplete="name" />
+            <input id="phone" type="tel" placeholder="Telefon" autocomplete="tel" />
+            <textarea id="msg" placeholder="Poruka (npr. kvadratura, opština, termin)"></textarea>
+            <button class="btn primary" type="submit">Pošalji</button>
+          </form>
+
+          <div class="note">
+            Savet: u poruku napiši kvadraturu (minimum 10 m²) i lokaciju (Rakovica / Voždovac / Čukarica).
+          </div>
+        </div>
+      </div>
+
+      <div class="small" style="padding:10px 0 18px; color:rgba(10,26,43,.62)">
+        © <span id="year"></span> Čist Miris · Profesionalno mašinsko pranje tepiha
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Pre/posle slider
+    const range = document.getElementById('range');
+    const afterImg = document.getElementById('afterImg');
+    const handle = document.getElementById('handle');
+    const pct = document.getElementById('pct');
+
+    function setCompare(val){
+      const v = Math.max(0, Math.min(100, Number(val)));
+      afterImg.style.clipPath = `inset(0 0 0 ${v}%)`;
+      handle.style.left = v + '%';
+      pct.textContent = v + '%';
+    }
+    range.addEventListener('input', e => setCompare(e.target.value));
+    setCompare(range.value);
+
+    // Mailto form
+    document.getElementById('mailForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = (document.getElementById('name').value || '').trim();
+      const phone = (document.getElementById('phone').value || '').trim();
+      const msg = (document.getElementById('msg').value || '').trim();
+
+      const subject = encodeURIComponent('Upit sa sajta – Čist Miris');
+      const body = encodeURIComponent(
+        `Ime: ${name}\nTelefon: ${phone}\n\nPoruka:\n${msg}\n\nCena: 400 din/m² (min 10 m²)\nLokacije: Rakovica, Voždovac, Čukarica\n`
+      );
+
+      const to = 'nenadobucina080@gmail.com';
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
