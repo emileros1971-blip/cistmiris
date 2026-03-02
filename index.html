@@ -88,18 +88,16 @@
     }
     .logo{
       width:36px; height:36px; border-radius:12px;
-      background:
-        linear-gradient(135deg, var(--blue2), var(--blue1));
       position:relative;
       box-shadow: 0 14px 26px rgba(46,141,255,.25);
       overflow:hidden;
+      background: transparent;
     }
-    .logo:before{
-      content:"";
-      position:absolute; inset:-30%;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.9), transparent 45%);
-      transform: rotate(18deg);
-      opacity:.8;
+    .logo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
     }
 
     /* Brand name - nicer font + slightly bigger */
@@ -451,7 +449,9 @@
     <div class="wrap">
       <div class="nav">
         <a class="brand" href="#top" aria-label="Početna">
-          <span class="logo" aria-hidden="true"></span>
+          <span class="logo" aria-hidden="true">
+            <img src="asset/IMG-f8081091731721791f943b2e00fba31d-V.jpg" alt="Čist Miris logo" loading="lazy" />
+          </span>
           <span class="brandName">Čist Miris</span>
         </a>
 
@@ -465,7 +465,7 @@
         </nav>
 
         <div class="cta">
-          <a class="btn" href="tel:+38165112116">Pozovi</a>
+          <a class="btn" href="tel:+381645112116">Pozovi</a>
           <a class="btn primary" href="#kontakt">Pošalji upit</a>
         </div>
       </div>
@@ -490,7 +490,7 @@
             </div>
 
             <div class="heroActions">
-              <a class="btn primary" href="tel:+38165112116">Pozovi 065/112-116</a>
+              <a class="btn primary" href="tel:+381645112116">Pozovi 064 5 112 116</a>
               <a class="btn blue" href="#cenovnik">Pogledaj cenovnik</a>
               <a class="btn" href="#proces">Kako radimo</a>
             </div>
@@ -503,7 +503,7 @@
             <div class="kv">
               <div class="item">
                 <div class="k">Telefon</div>
-                <div class="v"><a href="tel:+38165112116">065/112-116</a></div>
+                <div class="v"><a href="tel:+381645112116">064 5 112 116</a></div>
               </div>
               <div class="item">
                 <div class="k">Email</div>
@@ -619,7 +619,7 @@
               Minimum porudžbine: <strong>10 m²</strong>
             </div>
             <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
-              <a class="btn primary" href="tel:+38165112116">Pozovi 065/112-116</a>
+              <a class="btn primary" href="tel:+381645112116">Pozovi 064 5 112 116</a>
               <a class="btn" href="#kontakt">Pošalji upit</a>
             </div>
           </div>
@@ -652,7 +652,7 @@
               <span class="chip">Širi Beograd (sve opštine)</span>
             </div>
             <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
-              <a class="btn blue" href="tel:+38165112116">Pozovi</a>
+              <a class="btn blue" href="tel:+381645112116">Pozovi</a>
               <a class="btn" href="mailto:nenadobucina080@gmail.com">Email</a>
             </div>
           </div>
@@ -693,7 +693,7 @@
 
         <details>
           <summary>Kako da zakažem?</summary>
-          <div class="muted" style="margin-top:10px">Najbrže pozivom na 065/112-116 ili emailom na nenadobucina080@gmail.com.</div>
+          <div class="muted" style="margin-top:10px">Najbrže pozivom na 064 5 112 116 ili emailom na nenadobucina080@gmail.com.</div>
         </details>
       </div>
     </section>
@@ -711,7 +711,7 @@
           <div class="kv">
             <div class="item">
               <div class="k">Telefon</div>
-              <div class="v"><a href="tel:+38165112116">065/112-116</a></div>
+              <div class="v"><a href="tel:+381645112116">064 5 112 116</a></div>
             </div>
             <div class="item">
               <div class="k">Email</div>
